@@ -1,0 +1,17 @@
+{
+  "name": "node-js-hw-1",
+  "version": "1.0.0",
+  "description": "my-first-node-js-bild",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index" ,
+    "start:dev":"nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey-Kiselyov",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
