@@ -1,4 +1,4 @@
-// const { nanoid } = require("nanoid");
+const uniqid = require('uniqid');
 const fs = require("fs/promises");
 const path = require("path");
 
@@ -37,8 +37,7 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-  // const newContact = { id: nanoid(), name, email, phone };
-  const newContact = { name, email, phone };
+  const newContact = { id: uniqid(), name, email, phone };
   try {
     const contacts = await fs.readFile(contactsPath, "utf-8");
     const newContacts = [...JSON.parse(contacts), newContact];
