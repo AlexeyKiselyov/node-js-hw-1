@@ -18,8 +18,8 @@ function getContactById(contactId) {
   fs.readFile(contactsPath, "utf-8")
     .then((data) => {
       const parsedContacts = JSON.parse(data);
-      const contact = parsedContacts.filter((cont) => cont.id === contactId);
-      console.log(contact);
+      const contact = parsedContacts.find((cont) => cont.id === contactId);
+      console.log(contact||null);
     })
     .catch((error) => console.log(error.message));
 }
