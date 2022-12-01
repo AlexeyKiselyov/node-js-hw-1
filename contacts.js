@@ -24,14 +24,14 @@ async function listContacts() {
 }
 
 async function getContactById(contactId) {
-  const id = Number.isFinite(contactId) ? JSON.stringify(contactId) : contactId;
+  const id = String(contactId);
   const contacts = await listContacts();
   const contact = contacts.find((cont) => cont.id === id);
   return contact || null;
 }
 
 async function removeContact(contactId) {
-  const id = Number.isFinite(contactId) ? JSON.stringify(contactId) : contactId;
+  const id = String(contactId);
   const contacts = await listContacts();
   const contactForDeleteId = contacts.findIndex((contact) => contact.id === id);
   if (contactForDeleteId === -1) {
